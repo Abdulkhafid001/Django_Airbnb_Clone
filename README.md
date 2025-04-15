@@ -6,8 +6,8 @@ Clone of Airbnb major features using Django Rest Framework
 2. Geolocked search
 3. Chat functionality (messaging)
 4. Subscription management (billing)
-5. Admin dashboard
-6. Notifications
+5. Admin dashboard (CMS)
+6. Notifications (email, newletters)
 7. Auction(bidding)
 8. Payment Integration
 9. Booking System
