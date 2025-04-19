@@ -1,5 +1,5 @@
 from django.urls import path
-from listings.views import home
+from listings.views import listings
 urlpatterns = [
-    path('', home, name='home')
+    path('', listings, name='airbnb-listings')
 ]

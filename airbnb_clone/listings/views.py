@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from .models import Property
 
-
-def home(request):
+def listings(request):
     if request.user.is_authenticated:
-        return HttpResponse('Welcome Home Yslcodes')
+        return HttpResponse(Property.objects.all())
     else:
-        return redirect('login', preserve_request=True)
+        return redirect('home', preserve_request=True)
