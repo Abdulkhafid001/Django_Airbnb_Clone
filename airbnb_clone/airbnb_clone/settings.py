@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'chat',
     'listings',
     'airbnb_auth',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,6 +67,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'airbnb_clone.wsgi.application'
+ASGI_APPLICATION = 'airbnb_clone.asgi.application'
 
 
 # Database

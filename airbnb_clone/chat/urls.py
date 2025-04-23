@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index_view, name='chat-index'),
-    path('airnbclone/chat/<str:room_name>/',
+    path('<str:room_name>/',
          views.room_view, name='chat-room'),
 ]
