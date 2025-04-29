@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'chat',
     'listings',
     'airbnb_auth',
+    'daphne', 
     'channels',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -68,6 +69,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'airbnb_clone.wsgi.application'
 ASGI_APPLICATION = 'airbnb_clone.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND' :'channels.layers.InMemoryChannelLayer',
+    }
+}
 
 
 # Database
