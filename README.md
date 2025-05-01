@@ -1,8 +1,8 @@
 # Django_Airbnb_Clone
-Clone of Airbnb major features using Django Rest Framework
+Clone of Airbnb major features using Django and Django Rest Framework
 
 # Features
-1. Profile management
+ - Profile management
 2. Geolocked search
 3. Chat functionality (messaging)
 4. Subscription management (billing)
