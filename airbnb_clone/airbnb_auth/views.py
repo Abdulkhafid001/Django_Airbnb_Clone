@@ -66,5 +66,5 @@ def signup_view(request):
         messages.success(request, 'Signup successful! You can now log in.')
         return redirect('login')
     if request.user.is_authenticated:
-        return redirect('/chat/kishan/')  # todo: pass usename
+        return redirect('/chat/Yslcodesbnb/')  # todo: pass usename
     return render(request, 'signup.html')
