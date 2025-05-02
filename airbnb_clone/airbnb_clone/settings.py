@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,7 +23,7 @@ INSTALLED_APPS = [
     'chat',
     'listings',
     'airbnb_auth',
-    'daphne', 
+    'daphne',
     'channels',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'allauth.account.middleware.AccountMiddleware', 
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,7 +73,7 @@ ASGI_APPLICATION = 'airbnb_clone.asgi.application'
 
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND' :'channels.layers.InMemoryChannelLayer',
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
     }
 }
 
@@ -124,6 +125,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+# set the media root directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploaded_images')
+MEDIA_URL = 'uploaded_images/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -137,6 +146,3 @@ SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
 LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_ON_GET = True
-
-
- 
