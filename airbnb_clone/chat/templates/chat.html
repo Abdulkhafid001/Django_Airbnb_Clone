@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ room_name }}</title>
+    <title>chat with {{ room_name }}</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -266,6 +266,7 @@
       const chatSocket = new WebSocket(
         "ws://" + window.location.host + "/ws/chat/{{ room_name }}/"
       );
+
 
       chatSocket.onopen = function (e) {
         console.log("The connection was set up successfully!");

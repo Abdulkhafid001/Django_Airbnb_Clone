@@ -8,7 +8,6 @@ from django.db.models import Q
 @login_required
 def chat_room(request, room_name):
     search_query = request.GET.get('search', '')
-    print(search_query)
     users = User.objects.exclude(id=request.user.id)
     chats = Message.objects.filter(
         (Q(sender=request.user) & Q(receiver__username=room_name)) |
