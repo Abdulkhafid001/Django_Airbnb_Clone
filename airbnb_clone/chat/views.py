@@ -14,7 +14,6 @@ def chat_room(request, room_name):
         (Q(receiver=request.user) & Q(sender__username=room_name))
     )
 
-    print(chats)
 
     if search_query:
         chats = chats.filter(Q(content__icontains=search_query))
