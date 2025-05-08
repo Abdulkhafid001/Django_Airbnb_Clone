@@ -11,6 +11,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
         user1 = self.scope['user'].username
         user2 = self.room_name
         self.room_group_name = f"chat_{''.join(sorted([user1, user2]))}"
+        self.send(text_data=json.dumps({
+            'room_group_name': self.room_group_name,
+            'user1': user1,
+            'user2': user2}))
 
         # Join room group
         await self.channel_layer.group_add(self.room_group_name, self.channel_name)
