@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Message
+from datetime import datetime
 from django.db.models import Q
 
 
@@ -14,7 +15,6 @@ def chat_room(request, room_name):
         (Q(receiver=request.user) & Q(sender__username=room_name))
     )
 
-
     if search_query:
         chats = chats.filter(Q(content__icontains=search_query))
 
@@ -22,6 +22,7 @@ def chat_room(request, room_name):
     user_last_messages = []
 
     for user in users:
+
         last_message = Message.objects.filter(
             (Q(sender=request.user) & Q(receiver=user)) |
             (Q(receiver=request.user) & Q(sender=user))
@@ -42,6 +43,8 @@ def chat_room(request, room_name):
         'room_name': room_name,
         'chats': chats,
         'users': users,
+        'user_sent_messages': Message.objects.filter(sender=request.user),
+        'user_received_messages': Message.objects.filter(receiver=request.user),
         'user_last_messages': user_last_messages,
         'search_query': search_query
     })

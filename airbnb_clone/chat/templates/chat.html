@@ -299,7 +299,6 @@
           document.querySelector("#my_input").value = ""; // Clear input field after sending
         }
       };
-
       // Update the onmessage function to update the chat list
       chatSocket.onmessage = function (e) {
         const data = JSON.parse(e.data);
