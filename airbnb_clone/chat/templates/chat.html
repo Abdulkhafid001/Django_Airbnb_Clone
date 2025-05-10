@@ -270,6 +270,9 @@
 
       chatSocket.onopen = function (e) {
         console.log("The connection was set up successfully!");
+        // add code to test WebSocket server send a message
+        let data = JSON.parse(e.data); 
+        console.log('Data from Server:', data);
       };
       chatSocket.onclose = function (e) {
         console.log("Something unexpected happened!");

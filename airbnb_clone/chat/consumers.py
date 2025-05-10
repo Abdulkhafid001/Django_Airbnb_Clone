@@ -9,6 +9,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.room_name = self.scope['url_route']['kwargs']['room_name']
         user1 = self.scope['user'].username
+      
         user2 = self.room_name
         self.room_group_name = f"chat_{''.join(sorted([user1, user2]))}"
         self.send(text_data=json.dumps({
@@ -28,6 +29,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
         sender = self.scope['user']
+       
         receiver = await self.get_receiver_user()
 
         await self.save_message(sender, receiver, message)
