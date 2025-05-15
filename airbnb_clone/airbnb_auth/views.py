@@ -27,7 +27,7 @@ def login_page(request):
             messages.error(
                 request, 'Invalid email or password. Please try again.')
     if request.user.is_authenticated:
-        return redirect('/chat/kishan/')
+        return redirect('/chat/Yslcodesbnb/')
     return render(request, 'login.html')
 
 
