@@ -1,0 +1,24 @@
+   .card-img-top {
+       height: 200px;
+       object-fit: cover;
+   }
+
+   .badge-custom {
+       position: absolute;
+       top: 10px;
+       left: 10px;
+       background-color: #fff;
+       border-radius: 20px;
+       padding: 5px 10px;
+       font-size: 0.8rem;
+   }
+
+   .heart-icon {
+       color: #ccc;
+       margin-left: 5px;
+   }
+
+   .carousel-control-prev,
+   .carousel-control-next {
+       width: 5%;
+   }

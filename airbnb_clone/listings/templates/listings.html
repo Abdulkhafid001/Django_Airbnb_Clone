@@ -10,7 +10,76 @@
 </head>
 
 <body>
-    {% block content %} {% endblock content %}
+    {% block content %}
+    {% for listing in listings%}
+    <div>{{listing.title}}</div>
+    {% endfor%}
+    <div class="container mt-4">
+        <h4>Popular homes in Cape Town <span class="text-muted">&gt;</span></h4>
+        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-between">
+                        <div class="card me-2" style="width: 18rem;">
+                            <span class="badge badge-custom">Guest favorite</span>
+                            <img src="https://via.placeholder.com/300x200?text=Apartment+in+Cape+Town"
+                                class="card-img-top" alt="Apartment in Cape Town">
+                            <div class="card-body">
+                                <p class="card-text">Apartment in Cape Town</p>
+                                <p class="card-text"><strong>$126 for 2 nights + $4.95</strong></p>
+                            </div>
+                        </div>
+                        <div class="card me-2" style="width: 18rem;">
+                            <span class="badge badge-custom">Guest favorite</span>
+                            <img src="https://via.placeholder.com/300x200?text=Apartment+in+Cape+Town"
+                                class="card-img-top" alt="Apartment in Cape Town">
+                            <div class="card-body">
+                                <p class="card-text">Apartment in Cape Town</p>
+                                <p class="card-text"><strong>$167 for 2 nights + $4.92</strong></p>
+                            </div>
+                        </div>
+                        <div class="card me-2" style="width: 18rem;">
+                            <span class="badge badge-custom">Guest favorite</span>
+                            <img src="https://via.placeholder.com/300x200?text=Apartment+in+Cape+Town"
+                                class="card-img-top" alt="Apartment in Cape Town">
+                            <div class="card-body">
+                                <p class="card-text">Apartment in Cape Town</p>
+                                <p class="card-text"><strong>$120 for 2 nights + $4.84</strong></p>
+                            </div>
+                        </div>
+                        <div class="card me-2" style="width: 18rem;">
+                            <span class="badge badge-custom">Guest favorite</span>
+                            <img src="https://via.placeholder.com/300x200?text=Apartment+in+Green+Point"
+                                class="card-img-top" alt="Apartment in Green Point">
+                            <div class="card-body">
+                                <p class="card-text">Apartment in Green Point</p>
+                                <p class="card-text"><strong>$145 for 2 nights + $4.89</strong></p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <span class="badge badge-custom">Guest favorite</span>
+                            <img src="https://via.placeholder.com/300x200?text=Loft+in+Vredehoek" class="card-img-top"
+                                alt="Loft in Vredehoek">
+                            <div class="card-body">
+                                <p class="card-text">Loft in Vredehoek</p>
+                                <p class="card-text"><strong>$272 for 2 nights + $4.86</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more carousel items if needed -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    {% endblock content %}
 </body>
 
 </html>
