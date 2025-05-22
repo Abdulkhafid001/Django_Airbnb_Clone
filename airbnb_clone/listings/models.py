@@ -21,3 +21,12 @@ class Property(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class PropertyImage(models.Model):
+    property = models.ForeignKey(
+        Property, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='static/uploaded_images/')
+
+    def __str__(self):
+        return f"Image for {self.property.title}"
