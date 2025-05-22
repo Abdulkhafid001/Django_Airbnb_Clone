@@ -5,7 +5,7 @@ from .models import Property
 
 def listings(request):
     if request.user.is_authenticated:
-        listings = Property.objects.all()
+        listings = Property.objects.all()[:4]
         context = {'listings': listings}
         return render(request, 'listings.html', context)
     else:

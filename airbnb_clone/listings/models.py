@@ -16,7 +16,6 @@ class Property(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-            listing_added.send(sender=self)
             super().save(*args, **kwargs)
 
     def __str__(self):
@@ -24,9 +23,17 @@ class Property(models.Model):
 
 
 class PropertyImage(models.Model):
-    property = models.ForeignKey(
+    listing = models.ForeignKey(
         Property, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='static/uploaded_images/')
 
     def __str__(self):
-        return f"Image for {self.property.title}"
+        return f"Image for {self.listing.title}"
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
