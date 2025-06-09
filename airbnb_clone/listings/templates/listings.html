@@ -12,39 +12,7 @@
 <body>
     {% block content %}
     <div class="container mt-4">
-        <h4>Popular homes in Cape Town <span class="text-muted">&gt;</span></h4>
-        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-between">
-                        {% for listing in listings%}
-                        <div class="card me-2" style="width: 18rem;">
-                            <span class="badge badge-custom">Guest favorite</span>
-                            {% for image in listing.images.all %}
-                            <img src="{{ image.imageURL }}" class="card-img-top" alt="Apartment in Cape Town">
-                            {% empty %}
-                            <p>No images available.</p>
-                            {% endfor %}
-
-                            <div class="card-body">
-                                <p class="card-text">{{listing.title}}</p>
-                                <p class="card-text"><strong>{{listing.price}}</strong></p>
-                            </div>
-                        </div>
-                        {% endfor%}
-                    </div>
-                </div>
-                <!-- Add more carousel items if needed -->
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+       
     </div>
     {% endblock content %}
 </body>

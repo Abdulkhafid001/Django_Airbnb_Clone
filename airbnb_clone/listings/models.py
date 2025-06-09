@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
-from listings.signals import listing_added
 
 
 class Property(models.Model):
